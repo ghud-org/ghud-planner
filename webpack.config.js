@@ -1,4 +1,5 @@
 const path = require("path");
+const { ModuleFederationPlugin } = require("webpack").container;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -40,7 +41,7 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "ghud-planner",
+      name: "ghud_planner",
       filename: "remoteEntry.js",
       exposes: {
         "./App": "./src/App",
